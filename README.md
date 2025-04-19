@@ -1,4 +1,3 @@
-
 # Tút RClone trên mac
 
 - Khi tải/clone repo này về, lưu các file vào thư mục ~/rclone, 
@@ -35,7 +34,7 @@ rclone config
 rclone authorize "drive"
 ```
 - Mở trình duyệt chọn ok ok
-- Sau khi đăng nhập xong, nó sẽ hiện lên 1 dòng token dạng:
+- Sau khi đăng nhập xong, nó sẽ hiện lên ở terminal 1 dòng token dạng:
 ```bash
 {"access_token":"CÁI.NÀY.QUAN.TRỌNG.ĐỪNG.ĐỂ.AI.BIẾT","token_type":"Bearer","refresh_token":"AI.LẤY.ĐƯỢC.TOKEN.LÀ.CÓ.THỂ.LẤY.ĐƯỢC.DRIVE.CỦA.MÌNH","expiry":"THẾ.NÊN.TRƯỚC.KHI.MỞ.RA.XEM.THÌ.NGÓ.XEM.SAU.LƯNG.CÓ.AI.KHÔNG"}
 ```
@@ -53,26 +52,45 @@ token = {copy token vào đây}
 ```
 - Lưu lại
 
-### Bước 4: Mount
-- Cấp quyền thực thi cho file này: 
-```bash
-chmod +x ~/rclone/mount.sh
-```
-- Nhớ mở file ra và thay "tên-config-của-bạn-đặt-ở-bước-2" thành tên config đã làm ở bước 2
-- Chạy file: 
-```bash
-sh ~/rclone/mount.sh -c "tên-config-của-bạn-đặt-ở-bước-2" -d "đường-dẫn-đến-thư-mục-mount"
-```
-
-### Bước 5: Kiểm tra
-```bash
-rclone config reconnect tên-config-của-bạn-đặt-ở-bước-2:
-```
+### Bước 4: Kiểm tra đã connect đúng drive chưa
 - Kiểm tra đã kết nối chưa, đã load được các file trên cloud chưa
-- Nếu chưa kết nối, có thể cần kết nối lại
+- *Lưu ý: câu lệnh có dấu hai chấm ở cuối
 ```bash
 rclone ls tên-config-của-bạn-đặt-ở-bước-2:
 ```
+- Nếu không hiện ra hoặc lỗi, có thể cần kết nối lại
+- *Lưu ý: câu lệnh có dấu hai chấm ở cuối
+```bash
+rclone config reconnect tên-config-của-bạn-đặt-ở-bước-2:
+```
+
+### Bước 5: Mount
+- Cấp quyền thực thi cho file này:  
+```bash
+chmod +x ~/rclone/mount.sh
+```
+- Thư mục mount sẽ tự động tạo thành `~/tên-config`.
+- Chạy file:
+```bash
+sh ~/rclone/mount.sh <tên-config-của-bạn>
+```
+- Ví dụ:
+```bash
+sh ~/rclone/mount.sh paul
+```
+
+### Bước 6: Kiểm tra đã mount thành công chưa
+- Mở Finder ra xem
+
+## Một số case
+
+### Case 1: 
+- Nó hiện ra thế này khi mount:
+```bash
+2077/07/07 17:17:17 ERROR : Daemon timed out. Failed to terminate daemon pid 2077: os: process already finished
+2077/07/07 17:17:17 CRITICAL: Fatal error: daemon exited with error code 1
+```
+- Không phải lo đâu nhá, đấy nghĩa là nó đã mount được ổ rồi, máy nó báo là "mount gì mount lắm thế" chứ không có lỗi gì đâu
 
 # Góc khều donate (có thì có động lực hơn :v)
 ![qr_paul](qr_paul.jpg)

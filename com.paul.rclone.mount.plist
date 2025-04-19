@@ -6,7 +6,9 @@
     <string>com.paul.rclone.mount</string>
     <key>ProgramArguments</key>
     <array>
+        <string>sh</string>
         <string>~/rclone/mount.sh</string>
+        <string>171</string>
     </array>
     <key>RunAtLoad</key>
     <true/>
