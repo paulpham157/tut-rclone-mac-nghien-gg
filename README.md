@@ -1,5 +1,6 @@
 # Tút RClone trên mac
 
+- Có thể nhấn vào nút "Code" màu xanh lá ở bên tay trái repo này, chọn tải ZIP về rồi giải nén
 - Khi tải/clone repo này về, lưu các file vào thư mục ~/rclone, 
 - chạy câu lệnh cho nhanh (nếu mặc định tải về ở thư mục ~/Downloads):
 ```bash
@@ -24,12 +25,11 @@ brew install rclone
 ```bash
 rclone config
 ```
-- chọn như bước 2 ở tút https://voz.ee/notes/view/cfeafbda-8e0e-46dc-a06d-b81ac0bc712f
+- chọn như bước 2 ở tút bên Windows https://voz.ee/notes/view/cfeafbda-8e0e-46dc-a06d-b81ac0bc712f
 - Thank bác Lớp Phó Học Tập https://www.facebook.com/groups/nghiengoogleviet/posts/2315355895564276/
 
 ### Bước 3: Xác thực tài khoản
-- Nếu bước config chưa hiện lên option auto config để login trên web như tút, 
-- chạy lệnh sau để lấy token:
+- Nếu bước config chưa hiện lên option auto config để login trên web như tút, thì chạy lệnh sau để lấy token:
 ```bash
 rclone authorize "drive"
 ```
@@ -69,10 +69,10 @@ rclone config reconnect tên-config-của-bạn-đặt-ở-bước-2:
 ```bash
 chmod +x ~/rclone/mount.sh
 ```
-- Thư mục mount sẽ tự động tạo thành `~/tên-config`.
+- Thư mục mount sẽ tự động tạo thành `~/tên-config-của-bạn-đặt-ở-bước-2`.
 - Chạy file:
 ```bash
-sh ~/rclone/mount.sh <tên-config-của-bạn>
+sh ~/rclone/mount.sh tên-config-của-bạn-đặt-ở-bước-2
 ```
 - Ví dụ:
 ```bash
@@ -82,7 +82,18 @@ sh ~/rclone/mount.sh paul
 ### Bước 6: Kiểm tra đã mount thành công chưa
 - Mở Finder ra xem
 
-## Một số case
+### Bước 7: Tự động mount mỗi khi mở máy (thực ra là hơi thừa, vì dùng Mac có khi mấy tháng mới tắt máy 1 lần)
+- Mở file này com.paul.rclone.mount.plist sửa tên-config-của-bạn-đặt-ở-bước-2
+
+```bash
+chmod +x ~/rclone/auto-mount.sh
+```
+
+```bash
+sh ~/rclone/auto-mount.sh
+```
+
+## Một số err
 
 ### Case 1: 
 - Nó hiện ra thế này khi mount:
@@ -91,10 +102,3 @@ sh ~/rclone/mount.sh paul
 2077/07/07 17:17:17 CRITICAL: Fatal error: daemon exited with error code 1
 ```
 - Không phải lo đâu nhá, đấy nghĩa là nó đã mount được ổ rồi, máy nó báo là "mount gì mount lắm thế" chứ không có lỗi gì đâu
-
-# Góc khều donate (có thì có động lực hơn :v)
-![qr_paul](qr_paul.jpg)
-
-Hoặc
-
-<a href="https://www.paypal.com/paypalme/hungpham2302" target="_blank"><img src="https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white" /></a>
