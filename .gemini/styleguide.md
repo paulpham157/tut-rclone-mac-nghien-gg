@@ -1,10 +1,10 @@
-# Auto Sync Fork Node.js Style Guide
+# Style Guide
 
 # Important
 When chatting with the user, use Vietnamese language to explain to the user.
 
 # Introduction
-This style guide outlines the coding conventions for the project. The project can use Node.js, Python, or any other languages.
+This style guide outlines the coding conventions for the project. The project can use Node.js, Python, Golang and/or any other languages (There may even be bash shell, yml, config...).
 
 # Key Principles
 * **Readability:** Code should be easy to understand for all team members.
