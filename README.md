@@ -83,7 +83,7 @@ sh ~/rclone/mount.sh paul
 - Mở Finder ra xem
 
 ### Bước 7: Tự động mount mỗi khi mở máy (thực ra là hơi thừa, vì dùng Mac có khi mấy tháng mới tắt máy 1 lần)
-- Mở file này com.paul.rclone.mount.plist sửa tên-config-của-bạn-đặt-ở-bước-2
+- Trong thư mục `~/rclone/`, hãy mở file `com.paul.rclone.mount.plist` và chỉnh sửa nó. Tìm đến dòng chứa `tên-config-của-bạn-đặt-ở-bước-2` và thay thế bằng tên config rclone thực tế mà bạn đã đặt ở Bước 2.
 
 ```bash
 chmod +x ~/rclone/auto-mount.sh
