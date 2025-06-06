@@ -8,7 +8,7 @@
     <array>
         <string>sh</string>
         <string>~/rclone/mount.sh</string>
-        <string>171</string>
+        <string>tên-config-của-bạn-đặt-ở-bước-2</string>
     </array>
     <key>RunAtLoad</key>
     <true/>
